@@ -3,15 +3,15 @@
 
 
 
-  echo "   #  #  #"
-  echo "  #########"
-  echo "###       ###"
-  echo "  # {#}   #"
-  echo "###  '\######"
-  echo "  #       #"
-  echo "###       ###"
-  echo "  ########"
-  echo "   #  #  #"
+echo "   #  #  #"
+echo "  #########"
+echo "###       ###"
+echo "  # {#}   #"
+echo "###  '\######"
+echo "  #       #"
+echo "###       ###"
+echo "  ########"
+echo "   #  #  #"
 
 
 echo " Welcome to the C.H.I.P Flasher Tool " 
@@ -36,18 +36,16 @@ echo " Then press enter please "
 
 read flavour
 
-
-
 echo -e "\n Setting up environment"
 sudo pacman -Syu
 sudo pacman -S \
- git \
- wget \
- curl \
- sunxi-tools \
- uboot-tools \
- android-tools \
- screen --needed
+git \
+wget \
+curl \
+sunxi-tools \
+uboot-tools \
+android-tools \
+screen --needed
 
 echo -e "\n Adding udev rule for Allwinner device"
 echo -e 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip"
@@ -58,18 +56,12 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plug
 sudo udevadm control --reload-rules
 
 echo -e "\n Installing CHIP-tools"
-if [ -d CHIP-tools ]; then
- cd CHIP-tools 
- git pull 
- FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
- elif [ ! -d CHIP-tools ]; then
- git clone https://github.com/cassio-santos/CHIP-tools-manjaro.git
+if [ ! -d CHIP-tools ]; then
+  git clone https://github.com/cassio-santos/CHIP-tools-manjaro.git
 
-echo -e "\n Removing strict check to avoid '-i' errors"
- find . -type f -exec sed -i 's///g' {} +
- find . -type f -exec sed -i 's///g' {} +
-
- cd  CHIP-tools 
- FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
 fi
 
+
+cd CHIP-tools-manjaro
+git pull 
+FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
