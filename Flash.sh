@@ -56,7 +56,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plug
 sudo udevadm control --reload-rules
 
 echo -e "\n Installing CHIP-tools"
-if [ ! -d CHIP-tools ]; then
+if [ ! -d CHIP-tools-manjaro ]; then
   git clone https://github.com/cassio-santos/CHIP-tools-manjaro.git
 
 fi
