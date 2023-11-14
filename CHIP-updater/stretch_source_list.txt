@@ -1,2 +1,2 @@
-deb [check-valid-until=no] http://archive.debian.org/debian/dists/ stretch main contrib non-free
-deb-src [check-valid-until=no] http://archive.debian.org/debian/dists/ stretch main contrib non-free
+deb [check-valid-until=no] http://archive.debian.org/debian/ stretch main contrib non-free
+deb-src [check-valid-until=no] http://archive.debian.org/debian/ stretch main contrib non-free
