@@ -39,25 +39,15 @@ read flavour
 
 
 echo -e "\n Setting up environment"
-sudo apt -y update
-sudo apt -y install \
+sudo pacman -Syu
+sudo pacman -S \
  git \
- fastboot \
- u-boot-tools \
- adb \
- u-boot-tools \
- android-tools-fastboot \
- u-boot-tools \
- curl \
  wget \
+ curl \
  sunxi-tools \
-
-echo -e "\n Adding current user to dialout group"
-sudo usermod -a -G dialout $(logname)
-
-echo -e "\n Adding current user to plugdev group"
-sudo usermod -a -G plugdev $(logname)
-
+ uboot-tools \
+ android-tools \
+ screen --needed
 
 echo -e "\n Adding udev rule for Allwinner device"
 echo -e 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip"
@@ -73,14 +63,11 @@ if [ -d CHIP-tools ]; then
  git pull 
  FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
  elif [ ! -d CHIP-tools ]; then
- git clone https://github.com/Project-chip-crumbs/CHIP-tools.git
+ git clone https://github.com/cassio-santos/CHIP-tools-manjaro.git
 
 echo -e "\n Removing strict check to avoid '-i' errors"
  find . -type f -exec sed -i 's///g' {} +
  find . -type f -exec sed -i 's///g' {} +
-
-echo -e "\n Installing screen to connect through serial console"
- sudo apt install screen -y
 
  cd  CHIP-tools 
  FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
