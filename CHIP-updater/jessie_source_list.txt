@@ -1,6 +1,4 @@
-deb [check-valid-until=no] http://archive.debian.org/debian/ jessie main contrib non-free
-deb-src [check-valid-until=no] http://archive.debian.org/debian/ jessie main contrib non-free
-#deb [check-valid-until=no] http://archive.debian.org/ jessie/updates main contrib non-free
-#deb-src [check-valid-until=no] http://archive.debian.org/ jessie/updates main contrib non-free
+deb [check-valid-until=no] http://archive.debian.org/debian/dists/ jessie main contrib non-free
+deb-src [check-valid-until=no] http://archive.debian.org/debian/dists/ jessie main contrib non-free
 deb http://chip.jfpossibilities.com/chip/debian/repo jessie main
 deb http://chip.jfpossibilities.com/chip/debian/pocketchip jessie main
