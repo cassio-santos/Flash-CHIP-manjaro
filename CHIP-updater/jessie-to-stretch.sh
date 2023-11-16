@@ -72,6 +72,14 @@ echo -e "" >> /etc/NetworkManager/NetworkManager.conf
 echo -e "[device]" >> /etc/NetworkManager/NetworkManager.conf
 echo -e "wifi.scan-rand-mac-address=no" >> /etc/NetworkManager/NetworkManager.conf
 
+#restart network
+sudo service network-manager restart
+sleep 5
+sudo nmcli networking off
+sudo nmcli networking on
+
+
+
 # Define X11 variables for stretch
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
 wget https://raw.githubusercontent.com/cassio-santos/Flash-CHIP-manjaro/master/CHIP-updater/stretch_x11.txt

@@ -7,7 +7,7 @@ This guide and scripts are based on the excelent work made by https://github.com
 2. Connect the FEL and a GROUND pin of the C.H.I.P. (for example, with a paperclip).
 3. Connect the C.H.I.P. its micro USB port to a USB port of your Linux machine. Make sure that the port and cable allow for plenty of power. If you get a FEL error, it may be because the C.H.I.P. is running under-voltage.
 4. On the Linux machine:
-    - run ` git clone https://github.com/asophila/Flash-CHIP.git` to clone this repository
+    - run ` git clone https://github.com/cassio-santos/Flash-CHIP-manjaro.git` to clone this repository
     - `cd` into the location where you stored this repository
     - run `sudo chmod +x Flash.sh`
     - run `./Flash.sh`
@@ -27,11 +27,11 @@ This guide and scripts are based on the excelent work made by https://github.com
     
 ### Part 3: upgrade debian jessie to debian stretch
 1. run `sudo su -` to allow all the next changes as superuser
-2. run `bash <(curl -s https://raw.githubusercontent.com/asophila/Flash-CHIP/master/CHIP-updater/jessie-to-stretch.sh)` to update from Debian Jessie to Debian Stretch
+2. run `bash <(curl -s https://raw.githubusercontent.com/cassio-santos/Flash-CHIP-manjaro/master/CHIP-updater/jessie-to-stretch.sh)` to update from Debian Jessie to Debian Stretch
 3. reboot C.H.I.P. into Debian Stretch
                     
 ### Part 4: upgrade debian stretch to debian buster
 1. From your linux computer open other terminal and connect using `ssh chip@<CHIP IP>`.
 1. run `sudo su -` to allow all the next changes as superuser
-2. run `bash <(curl -s https://raw.githubusercontent.com/asophila/Flash-CHIP/master/CHIP-updater/stretch-to-buster.sh)` to update from Debian Stretch to Debian Buster
+2. run `bash <(curl -s https://raw.githubusercontent.com/cassio-santo/Flash-CHIP-manjaro/master/CHIP-updater/stretch-to-buster.sh)` to update from Debian Stretch to Debian Buster
 3. reboot C.H.I.P. into Debian Buster
