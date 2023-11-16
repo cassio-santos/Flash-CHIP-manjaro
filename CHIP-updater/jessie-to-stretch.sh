@@ -21,12 +21,12 @@ apt update
 apt upgrade -y --force-yes
 sleep 5
 
-#sudo apt install locales -y
-#sudo locale-gen en_US en_US.UTF-8
-#sudo dpkg-reconfigure locales
-#sudo dpkg-reconfigure tzdata
-#
-#sudo apt install git vim tmux libx11-dev libxtst-dev
+sudo apt install locales -y
+sudo locale-gen en_US en_US.UTF-8
+sudo dpkg-reconfigure locales
+sudo dpkg-reconfigure tzdata
+
+sudo apt install git gcc make vim tmux libx11-dev libxtst-dev -y --force-yes
 #git clone https://github.com/aleh/pocketchip-batt.git
 #cd pocketchip-batt
 #sudo make install
