@@ -74,9 +74,11 @@ apt full-upgrade -y --force-yes
 
 #restart network
 sudo service network-manager restart
-sleep 5
+sleep 30
 sudo nmcli networking off
+sleep 10
 sudo nmcli networking on
+sleep 30
 
 apt install linux-image-armmp -y --force-yes
 #sleep 5
