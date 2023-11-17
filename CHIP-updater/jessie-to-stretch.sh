@@ -57,9 +57,9 @@ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak2
 wget https://raw.githubusercontent.com/cassio-santos/Flash-CHIP-manjaro/master/CHIP-updater/stretch_source_list.txt
 mv stretch_source_list.txt /etc/apt/sources.list
 
-#echo "."
-#echo "*** apt update & upgrade ***"
-#apt update
+echo "."
+echo "*** apt update & upgrade ***"
+apt update
 #apt install linux-image-armmp -y --force-yes
 #apt full-upgrade -y --force-yes
 #sleep 5
