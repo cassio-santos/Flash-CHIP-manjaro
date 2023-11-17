@@ -60,7 +60,7 @@ mv stretch_source_list.txt /etc/apt/sources.list
 echo "."
 echo "*** apt update & upgrade ***"
 apt update
-apt full-upgrade -y --force-yes
+apt upgrade -y --force-yes
 
 # Define network variables
 sudo chmod 666 /etc/NetworkManager/NetworkManager.conf
@@ -69,6 +69,8 @@ echo -e "wifi.mac-address-randomization=1" >> /etc/NetworkManager/NetworkManager
 echo -e "" >> /etc/NetworkManager/NetworkManager.conf
 echo -e "[device]" >> /etc/NetworkManager/NetworkManager.conf
 echo -e "wifi.scan-rand-mac-address=no" >> /etc/NetworkManager/NetworkManager.conf
+
+apt full-upgrade -y --force-yes
 
 #restart network
 sudo service network-manager restart
